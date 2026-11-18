@@ -1,0 +1,37 @@
+# ADAML Workshop 4 - RNN and LSTM
+
+## Project Description
+
+In this workshop, we will study RNN and LSTM by predicting the trajectory of a two-wheel-drive robot such as Roomba.
+
+### Robot
+
+The robot is a two wheeled robot. Each wheen can spin either forwards, backwards, or stay still. The robot moves and turns by spinning the wheels.
+
+### Data
+
+Each sequence starts at $(0,0)$ facing the positive x-direction. 
+Each timestep the input contains:
+    - Left and right wheel commands
+    - A flag if the motor is running or not
+    - A reset flag  (this we don't use now)
+Commands are held for `command_duration` timesteps (0.1 s).
+
+### Models 
+
+The models (MLP, RNN, LSTM) predict the robots 2D position $(x, y)$ at every timestep -> reconstruction of the trajectory only from the motor commands.
+
+
+## Tasks
+
+1. Make sure you understand the models and the data.
+    - Visualize data if needed.
+2. Study how the models behave with different `sequence_length`
+    - If you have time, you can doo random seed study as well
+3. How does the LSTM memory affect the trajectory reconstruction?
+4. Generalization:
+    - Train the model with gentle turn and then test with sharper turns
+
+Each group should prepare a couple of plots to show others
+
+Last modified: Wednesday, 18 November 2026, 2:15 PM
